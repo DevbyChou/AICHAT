@@ -39,7 +39,7 @@ def handle_message(event):
     if match:
         years_ahead = int(match.group(1))
         total_sumnet = calculate_forecasted_sumnet(years_ahead)
-        response_message = f"Forecasted total SumNet for the next {years_ahead} years: {total_sumnet}"
+        response_message = f"Forecasted total SumNet for the next {years_ahead} years: {total_sumnet:.4f}"
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=response_message)
